@@ -11,7 +11,10 @@ namespace Capstone_Pig_Latin
         static void Main(string[] args)
         {
             Console.WriteLine("This will translate what you type into Pig Latin!");
-            Console.ReadLine();
+           string userWord = Console.ReadLine();
+            char[] vowels = new char[] { 'a', 'e', 'i', 'o', 'u' };
+            
+
         }
     }
 }
