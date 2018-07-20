@@ -20,7 +20,7 @@ namespace Capstone_Pig_Latin
                 Console.WriteLine(userWord + "way");
                 Console.ReadKey();
             }
-            else for (int i = 0; i <= userWord.Length; i++)
+            else for (int i = 1; i <= userWord.Length; i++) //if userWord[i] == vowelList
             {
                     string[] words = userWord.Split(vowelList, 2);
                     front = userWord.Substring(0,1);
