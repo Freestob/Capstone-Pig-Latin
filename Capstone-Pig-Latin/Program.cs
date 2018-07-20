@@ -10,6 +10,8 @@ namespace Capstone_Pig_Latin
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("This will translate what you type into Pig Latin!");
+            Console.ReadLine();
         }
     }
 }
