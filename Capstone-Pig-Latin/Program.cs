@@ -10,7 +10,7 @@ namespace Capstone_Pig_Latin
     {
         static void Main(string[] args)
         {
-            string front = "", back = "";
+            //string front = "", back = "";
            char[] vowelList = new char[] { 'a', 'e', 'i', 'o', 'u' };
             Console.WriteLine("This will translate what you type into Pig Latin!");
            string userWord = Console.ReadLine();
@@ -23,24 +23,14 @@ namespace Capstone_Pig_Latin
             else 
             {
                 int index = userWord.IndexOf("a");
-                userWord = userWord.Remove(index, 1).Insert(index, ",");
-                /* for (int i = 1; i <= userWord.Length; i++) //if userWord[i] == vowelList
-                 {
-                     if (userWord[i] == 'a' || userWord[i] == 'e' || userWord[i] == 'i' || userWord[i] == 'o' || userWord[i] == 'u')
-                     {
-                         Console.WriteLine("Hey");
-                         Console.Read();
-                         break;
-                     }
-                 }*/
-                Console.WriteLine(userWord);
+                userWord = userWord.Insert(index, " ");
+                string[] temp = userWord.Split(' ');
+                string back = temp[0];
+                string front = temp[1];
+                
+                Console.WriteLine(front + back + "ay");
                 Console.ReadLine();
             }
-
-            Console.WriteLine(back + front + "ay");
-            Console.ReadKey();
-            //  Console.WriteLine(output);
-            Console.ReadKey();
         }
     }
 }
