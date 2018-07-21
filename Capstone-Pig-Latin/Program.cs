@@ -22,7 +22,7 @@ namespace Capstone_Pig_Latin
             }
             else 
             {
-                int index = userWord.IndexOf("a");
+                int index = userWord.IndexOfAny(vowelList);
                 userWord = userWord.Insert(index, " ");
                 string[] temp = userWord.Split(' ');
                 string back = temp[0];
