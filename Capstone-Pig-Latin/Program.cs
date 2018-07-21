@@ -20,12 +20,23 @@ namespace Capstone_Pig_Latin
                 Console.WriteLine(userWord + "way");
                 Console.ReadKey();
             }
-            else for (int i = 1; i <= userWord.Length; i++) //if userWord[i] == vowelList
+            else 
             {
-                    string[] words = userWord.Split(vowelList, 2);
-                    front = userWord.Substring(0,1);
-                    back = userWord.Substring(1);
+                int index = userWord.IndexOf("a");
+                userWord = userWord.Remove(index, 1).Insert(index, ",");
+                /* for (int i = 1; i <= userWord.Length; i++) //if userWord[i] == vowelList
+                 {
+                     if (userWord[i] == 'a' || userWord[i] == 'e' || userWord[i] == 'i' || userWord[i] == 'o' || userWord[i] == 'u')
+                     {
+                         Console.WriteLine("Hey");
+                         Console.Read();
+                         break;
+                     }
+                 }*/
+                Console.WriteLine(userWord);
+                Console.ReadLine();
             }
+
             Console.WriteLine(back + front + "ay");
             Console.ReadKey();
             //  Console.WriteLine(output);
