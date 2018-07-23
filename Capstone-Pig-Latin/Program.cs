@@ -17,24 +17,32 @@ namespace Capstone_Pig_Latin
                 Console.WriteLine("This will translate what you type into Pig Latin!");
                 string userWord = Console.ReadLine().ToLower();
 
-                if (userWord.StartsWith("a") || userWord.StartsWith("e") || userWord.StartsWith("i") || userWord.StartsWith("o") || userWord.StartsWith("u"))
+                if (vowelList.Any(userWord.Contains))
                 {
-                    Console.WriteLine(userWord + "way");
-                    Console.ReadKey();
+                    if (userWord.StartsWith("a") || userWord.StartsWith("e") || userWord.StartsWith("i") || userWord.StartsWith("o") || userWord.StartsWith("u"))
+                    {
+                        Console.WriteLine(userWord + "way");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        int index = userWord.IndexOfAny(vowelList);
+                        userWord = userWord.Insert(index, " ");
+                        string[] temp = userWord.Split(' ');
+                        string back = temp[0];
+                        string front = temp[1];
+
+                        Console.WriteLine(front + back + "ay");
+                        Console.ReadLine(); 
+
+                    }
                 }
                 else
                 {
-                    int index = userWord.IndexOfAny(vowelList);
-                    userWord = userWord.Insert(index, " ");
-                    string[] temp = userWord.Split(' ');
-                    string back = temp[0];
-                    string front = temp[1];
-
-                    Console.WriteLine(front + back + "ay");
+                    Console.WriteLine(userWord + "ay");
                     Console.ReadLine();
-
                 }
-                Console.WriteLine("Would you like to translate another word?");
+                Console.WriteLine("Would you like to translate another word? (y/n)");
 
                 if (Console.ReadLine().ToLower() != "y")
                 {
@@ -45,5 +53,7 @@ namespace Capstone_Pig_Latin
             }
 
         }
+        
     }
+   
 }
